@@ -1,3 +1,4 @@
+//Made by Edgars Eduards Hoveckis 2020
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 const fs = require("fs");

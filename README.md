@@ -1,6 +1,6 @@
 # discord-antilang
-JS Language Filter For Discord.js
-Tested on Discord.js v12
+JS Language Filter For Discord.js Tested on Discord.js v12. Uses Regex as filter
+
 
 ## How to use
 1. Download and add the `anti-lang.js` & `local-config.json` to your project. (Don't forget to link them in the main file.)

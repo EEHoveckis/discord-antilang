@@ -4,7 +4,8 @@ Tested on Discord.js v12
 
 ## How to use
 1. Download and add the `anti-lang.js` & `local-config.json` to your project. (Don't forget to link them in the main file.)
-```const localconfig = JSON.parse(fs.readFileSync("./local-config.json", "utf8"));
+```
+const localconfig = JSON.parse(fs.readFileSync("./local-config.json", "utf8"));
 const antiLang = require("./anti-lang.js");
 ```
 2. Add these lines to your code:

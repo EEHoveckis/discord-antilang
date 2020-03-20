@@ -8,6 +8,8 @@ JS Language Filter For Discord.js Tested on Discord.js v12. Uses Regex as filter
 const localconfig = JSON.parse(fs.readFileSync("./local-config.json", "utf8"));
 const antiLang = require("./anti-lang.js");
 ```
+
+(If you're using `local-config.json` you will need `fs` module installed.)
 2. Add these lines to your code:
 ```
 bot.on("ready", async () => {

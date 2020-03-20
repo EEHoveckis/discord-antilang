@@ -99,8 +99,8 @@ module.exports = async (bot) => {
 
                bot.guilds.resolve(localconfig.logsguild).channels.resolve(localconfig.chatLogsChannel).send({embed: ChatFilterModEmbed});
             setTimeout(() => {
-               if(message.member.roles.some(r=>["Muted"].includes(r.name)) ) {
-                  message.member.removeRole(muterole);
+               if(message.member.roles.cache.some(r=>["Muted"].includes(r.name)) ) {
+                  message.member.roles.remove(muterole);
                   message.channel.send(`${message.author.username} Has Been Unmuted. :sound:`);
                } else {
                   console.log(`[LOGS] Tried Unmuting a user ${message.author.username}, but user was already unmuted!`);

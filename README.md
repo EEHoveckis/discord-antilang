@@ -1,44 +1,32 @@
-# discord-antilang
-JS Language Filter For Discord.js Tested on Discord.js v12. Uses Regex as filter
+<h1 align="center">discord-antiLang</h1>
+<p align="center">Better Language Filter For Discord.js</p>
 
+## 📝 Description
+Language filter for discord bots using discord.js  
+Tested using v12.5.1  
+Uses RegExp to find bad words, so there are no false warnings (like "assignment" get taken as "ass").
 
-## How to use
-1. Download and add the `anti-lang.js` & `local-config.json` to your project. (Don't forget to link them in the main file.)
+## 🔧 Setup
+Download the `antiLang.js` & `badwords.json` files and add them to your project.
+
+## 📕 Usage
+To require antiLang in your program do:
 ```
-const localconfig = JSON.parse(fs.readFileSync("./local-config.json", "utf8"));
 const antiLang = require("./anti-lang.js");
 ```
 
-(If you're using `local-config.json` you will need `fs` module installed.)
-
-2. Add these lines to your code:
-```
-bot.on("ready", async () => {
-    antiLang(bot);
-    //other stuff you need
-});
-```
-3. Add these lines to your code:
+To pass message to filter, do:
 ```
 bot.on("message", async message => {
-    bot.emit('checkLang', message);
-    //other stuff you need
+    antiLang(client, message);
 });
 ```
-4. Edit the values in `local-config.json`:
+Note: You can edit the behaviour in the file:
 ```
-{
-  "logsguild": "123456789123456789", <-- Your Guild ID
-  "chatLogsChannel": "123456789123456789", <-- Channel where you want embed to be sent. (Must be in the guild)
-  "botThumbnail": "https://i.imgur.com/7SXfhTG.png" <-- Picture that you want the embed to show.
-}
+const antiLangLevel = 1; // Available choices are [1, 2, 3, 4]. Others will give out warning and won't do anything.
 ```
-## Not using localconfig
-You can instead just use simple strings and ditch the `local-config.json`.
-```
-localconfig.botThumbnail --> "https://i.imgur.com/7SXfhTG.png"
-localconfig.logsguild --> "123456789123456789"
-localconfig.chatLogsChannel --> "123456789123456789"
-```
-## Bug Reports
-If you have any bugs or trouble setting the module up, feel free to open an issue on Github
+
+## 👨‍⚖️ License
+[![Creative Commons Attribution 4.0 International License](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+
+[discord-antiLang](https://github.com/EEHoveckis/discord-antiLang) by [EEHoveckis](https://github.com/EEHoveckis) is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/). Permissions beyond the scope of this license may be available on request.

@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
-const badWords = require("./badWords.json"); // Bad words file.
+const { badWords } = require("./badWords.json"); // Bad words file.
 const antiLangLevel = 1; // AntiLang Level.
 const muteRoleName = "MUTED"; // You can change the muterole name here.
 
 module.exports = function(client, message) {
   // This takes the message and checks if it contains any of the bad words.
-  for(var i = 0; i < badWords.badWords.length; i++) {
-    var regexCase = new RegExp(`\\b${badWords.badWords[i]}\\b`, "gim");
+  for(var i = 0; i < badWords.length; i++) {
+    var regexCase = new RegExp(`\\b${badWords[i]}\\b`, "gim");
     var found = regexCase.test(message.content);
     if(found) break;
   }
